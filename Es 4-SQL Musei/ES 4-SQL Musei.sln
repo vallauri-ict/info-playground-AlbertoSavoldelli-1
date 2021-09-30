@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ES 4-SQL Musei", "ES 4-SQL Musei\ES 4-SQL Musei.csproj", "{9375D0FB-5442-438F-860B-C562EC741D1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9375D0FB-5442-438F-860B-C562EC741D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9375D0FB-5442-438F-860B-C562EC741D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9375D0FB-5442-438F-860B-C562EC741D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9375D0FB-5442-438F-860B-C562EC741D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21004FD1-9D71-4625-BA99-2E5BF7B3C74F}
+	EndGlobalSection
+EndGlobal
