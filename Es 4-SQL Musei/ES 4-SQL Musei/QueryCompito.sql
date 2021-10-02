@@ -27,17 +27,39 @@ WHERE o.NomeM='Uffizi'
 AND a.NomeA=o.NomeA
 GROUP BY a.NomeA
 
-/*Per le Opere di artisti italiani che non hanno personaggi, il titolo dell'opera e il nome dell'artista*/
-SELECT o.Titolo,a.NomeA
-FROM Artisti a, Opere o,Personaggi p
+/* I musei che conservano almeno 20 opere di artisti italiani */
+SELECT o.NomeMuseo, COUNT(*) AS NumeroOpere
+FROM Opere o, Artisti a
+WHERE o.NomeA = a.NomeA
+AND a.Nazionalita = 'ITA'
+GROUP BY o.NomeMuseo
+HAVING COUNT(*)>19
+
+/* Titolo dell'opera e nome dell'artista per ogni opera di un artista italiano senza personaggio */
+SELECT a.NomeA, o.Titolo
+FROM Artisti a, Opere o
 WHERE a.Nazionalita='IT'
 AND a.NomeA=o.NomeA
-AND NOT EXISTS(SELECT * FROM Personaggi p,Opere o WHERE p.Codice=o.Codice)
+AND NOT EXISTS(SELECT * FROM Personaggi p WHERE p.Codice=o.Codice)
 
-/*Il nome dei musei di londra che non hanno opere di artisti italiani, eccetto Tiziano*/
-SELECT m.NomeM
+/* Il nome dei musei di Londra che non hanno opere di artisti italiani, eccetto Tiziano */
+SELECT m.NomeMuseo
 FROM Musei m
 WHERE  m.Citta='Londra'
-AND NOT EXISTS(SELECT * FROM Opere o,Artisti a WHERE a.Nazionalita='IT' OR o.NomeA='Tiziano' AND o.NomeM=m.NomeM)
+AND NOT EXISTS(SELECT * FROM Opere o,Artisti a 
+	WHERE a.Nazionalita='IT' OR o.NomeA<>'Tiziano' AND o.NomeMuseo=m.NomeMuseo)
+
+/* Per ogni museo, il numero di opere divise per nazionalità dell'artista*/
+SELECT o.NomeMuseo, a.Nazionalita, count(*) as NumeroOpere
+FROM Opere o, Artisti a
+WHERE o.NomeA = a.NomeA
+GROUP BY a.Nazionalita, o.NomeMuseo
+ORDER BY o.NomeMuseo
+
+UPDATE Artisti
+SET Nazionalita = 'ESP'
+WHERE NomeA = 'Picasso'
+
+DELETE FROM Artisti WHERE NomeA = 'Pol'
 
 
