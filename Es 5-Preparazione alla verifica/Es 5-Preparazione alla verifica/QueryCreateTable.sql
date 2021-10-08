@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Proprietari]
 (
-	[CodF] VARCHAR(20) NOT NULL PRIMARY KEY, 
+	[CodF] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Nome] VARCHAR(30) NULL, 
     [Residenza] VARCHAR(30) NULL
 )
@@ -17,7 +17,7 @@ CREATE TABLE [dbo].[Auto]
     [Modello] VARCHAR(30) NULL, 
     [Cilindrata] INT NULL, 
     [Potenza] INT NULL, 
-    [CodF] VARCHAR(20) NULL, 
+    [CodF] INT  NULL, 
     [CodAss] INT NULL, 
     CONSTRAINT [FK_Auto_ToTable] FOREIGN KEY ([CodF]) REFERENCES [Proprietari]([CodF]), 
     CONSTRAINT [FK_Auto_ToTable_1] FOREIGN KEY ([CodAss]) REFERENCES [Assicurazioni]([CodAss])
