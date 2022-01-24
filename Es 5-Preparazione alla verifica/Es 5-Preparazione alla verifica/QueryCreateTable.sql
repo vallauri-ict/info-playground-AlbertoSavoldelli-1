@@ -1,39 +1,29 @@
-﻿CREATE TABLE [dbo].[Proprietari]
-(
-	[CodF] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [Nome] VARCHAR(30) NULL, 
-    [Residenza] VARCHAR(30) NULL
-)
-CREATE TABLE [dbo].[Assicurazioni]
-(
-	[CodAss] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [Nome] VARCHAR(30) NULL, 
-    [Sede] VARCHAR(50) NULL
-)
-CREATE TABLE [dbo].[Auto]
-(
-	[Targa] VARCHAR(7) NOT NULL PRIMARY KEY, 
-    [Marca] VARCHAR(30) NULL, 
-    [Modello] VARCHAR(30) NULL, 
-    [Cilindrata] INT NULL, 
-    [Potenza] INT NULL, 
-    [CodF] INT  NULL, 
-    [CodAss] INT NULL, 
-    CONSTRAINT [FK_Auto_ToTable] FOREIGN KEY ([CodF]) REFERENCES [Proprietari]([CodF]), 
-    CONSTRAINT [FK_Auto_ToTable_1] FOREIGN KEY ([CodAss]) REFERENCES [Assicurazioni]([CodAss])
-)
-CREATE TABLE [dbo].[Sinistro]
-(
-	[CodS] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [Localita] VARCHAR(30) NULL, 
-    [Data] DATE NULL
-)
-CREATE TABLE [dbo].[AutoCoinvolte]
-(
-	[CodS] INT NOT NULL , 
-    [Targa] VARCHAR(7) NOT NULL, 
-    [ImportoDelDanno] INT NULL, 
-    PRIMARY KEY ([CodS], [Targa]), 
-    CONSTRAINT [FK_Table_ToTable] FOREIGN KEY ([CodS]) REFERENCES [Sinistro]([CodS]), 
-    CONSTRAINT [FK_Table_ToTable_1] FOREIGN KEY ([Targa]) REFERENCES [Auto]([Targa])
-)
+﻿CREATE TABLE Proprietari(
+	CodF int PRIMARY KEY IDENTITY,/*Identity -> Numero progressivo*/
+	Nome varchar(20),
+	Residenza varchar(30)
+);
+CREATE TABLE Assicurazioni(
+	CodAss int PRIMARY KEY IDENTITY,
+	Nome varchar(20),
+	Sede varchar(30)
+);
+CREATE TABLE Sinistro(
+	CodS int PRIMARY KEY IDENTITY,
+	Localita varchar(30),
+	DataSinistro date
+);
+CREATE TABLE Automobili(
+	Targa varchar(7) PRIMARY KEY NOT NULL,
+	Marca varchar(20),
+	Cilindrata int,
+	Potenza int,
+	CodF int FOREIGN KEY REFERENCES Proprietari(CodF),
+	CodAss int FOREIGN KEY REFERENCES Assicurazioni(CodAss)
+);
+CREATE TABLE AutoCoinvolte(
+	CodS int FOREIGN KEY REFERENCES Sinistro(CodS),
+	Targa varchar(7) FOREIGN KEY REFERENCES Automobili(Targa),
+	ImportoDanno int
+	/*PRIMARY KEY(CodS, Targa)*/
+);
