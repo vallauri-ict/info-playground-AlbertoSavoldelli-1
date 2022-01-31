@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Es 8-Trigger", "Es 8-Trigger\Es 8-Trigger.csproj", "{A92360A8-70B1-46A6-83E8-0295473682DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A92360A8-70B1-46A6-83E8-0295473682DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92360A8-70B1-46A6-83E8-0295473682DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92360A8-70B1-46A6-83E8-0295473682DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92360A8-70B1-46A6-83E8-0295473682DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1298DBE3-04B4-430A-9B02-B99D8D1A6DA8}
+	EndGlobalSection
+EndGlobal
