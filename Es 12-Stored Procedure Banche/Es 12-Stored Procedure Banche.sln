@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Es 12-Stored Procedure Banche", "Es 12-Stored Procedure Banche\Es 12-Stored Procedure Banche.csproj", "{C51456A1-B179-4B42-BEF6-780F42199EEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C51456A1-B179-4B42-BEF6-780F42199EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51456A1-B179-4B42-BEF6-780F42199EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51456A1-B179-4B42-BEF6-780F42199EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51456A1-B179-4B42-BEF6-780F42199EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D212307-14A4-43D4-AE3C-B8D41DC33417}
+	EndGlobalSection
+EndGlobal
