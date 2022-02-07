@@ -3,6 +3,8 @@
 _Il repository contiene esercizi relativi agli argomenti trattati durante l'anno:_
 
 * _SQL_
+* _Trigger_
+* _Stored procedure_
 
 
 _Savoldelli Alberto_
